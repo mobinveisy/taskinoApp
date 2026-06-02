@@ -1,0 +1,217 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* Iransans - Modern Persian Font */
+@font-face {
+  font-family: 'Iransans';
+  src: url('https://cdn.jsdelivr.net/gh/rastikerdar/iransans/dist/IranSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Iransans';
+  src: url('https://cdn.jsdelivr.net/gh/rastikerdar/iransans/dist/IranSans-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Iransans';
+  src: url('https://cdn.jsdelivr.net/gh/rastikerdar/iransans/dist/IranSans-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Vazirmatn - Fallback Persian Font */
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts/webfonts/Vazirmatn-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts/webfonts/Vazirmatn-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts/webfonts/Vazirmatn-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --background: #0B1020;
+  --background-secondary: #111827;
+  --background-tertiary: #1F2937;
+  --foreground: #F9FAFB;
+  --foreground-secondary: #D1D5DB;
+  --foreground-muted: #9CA3AF;
+  --card: rgba(255, 255, 255, 0.08);
+  --card-hover: rgba(255, 255, 255, 0.12);
+  --card-foreground: #F9FAFB;
+  --popover: rgba(255, 255, 255, 0.08);
+  --popover-foreground: #F9FAFB;
+  --primary: #8B5CF6;
+  --primary-foreground: #FFFFFF;
+  --secondary: #06B6D4;
+  --secondary-foreground: #FFFFFF;
+  --accent: #EC4899;
+  --accent-foreground: #FFFFFF;
+  --muted: rgba(255, 255, 255, 0.06);
+  --muted-foreground: #9CA3AF;
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: #8B5CF6;
+  --chart-1: #8B5CF6;
+  --chart-2: #06B6D4;
+  --chart-3: #EC4899;
+  --chart-4: #10B981;
+  --chart-5: #F59E0B;
+  --radius: 1.5rem;
+  --sidebar: rgba(255, 255, 255, 0.04);
+  --sidebar-foreground: #F9FAFB;
+  --sidebar-primary: #8B5CF6;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: rgba(255, 255, 255, 0.08);
+  --sidebar-accent-foreground: #F9FAFB;
+  --sidebar-border: rgba(255, 255, 255, 0.08);
+  --sidebar-ring: #8B5CF6;
+}
+
+@theme inline {
+  --font-sans: 'Iransans', 'Vazirmatn', system-ui, sans-serif;
+  --font-mono: 'Iransans', 'Vazirmatn', monospace;
+  --color-background: var(--background);
+  --color-background-secondary: var(--background-secondary);
+  --color-background-tertiary: var(--background-tertiary);
+  --color-foreground: var(--foreground);
+  --color-foreground-secondary: var(--foreground-secondary);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-card: var(--card);
+  --color-card-hover: var(--card-hover);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 8px);
+  --radius-md: calc(var(--radius) - 4px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 8px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Glass card styles */
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.glass-card-hover:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Gradient backgrounds */
+.gradient-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  animation: blob-float 8s ease-in-out infinite;
+}
+
+@keyframes blob-float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -30px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+/* Glow effects */
+.glow-primary {
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+}
+
+.glow-secondary {
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.3);
+}
+
+.glow-accent {
+  box-shadow: 0 0 30px rgba(236, 72, 153, 0.3);
+}
